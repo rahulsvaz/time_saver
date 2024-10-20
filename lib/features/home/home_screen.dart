@@ -31,20 +31,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ? Center(
                 child: Text("N Data"),
               )
-            : Expanded(
-                child: ListView.builder(
-                    itemCount: provider.timeList.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                            child: Text(
-                          provider.timeList[index].time,
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.w600),
-                        )),
-                      );
-                    }));
+            : ListView.builder(
+                itemCount: provider.timeList.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                        child: Text(
+                      provider.timeList[index].time,
+                      style: TextStyle(
+                          fontSize: 25, fontWeight: FontWeight.w600),
+                    )),
+                  );
+                });
       }),
     );
   }
